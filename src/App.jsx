@@ -45,7 +45,18 @@ const App = () => {
   if (err) {
     return <p>Error Mode</p>;
   }
-
+  if (tours.length == 0) {
+    return (
+      <main>
+        <div className="title">
+          <h2>no tour left</h2>
+          <button className="btn " onClick={fetchTour}>
+            refraiche
+          </button>
+        </div>
+      </main>
+    );
+  }
   return (
     <main>
       <Tours tours={tours} removeTour={removeTour} />
